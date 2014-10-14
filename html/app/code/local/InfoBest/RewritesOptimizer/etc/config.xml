@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<config>
+    <modules> <!--VERSION-->
+        <InfoBest_RewritesOptimizer>
+            <version>0.1.0</version>
+        </InfoBest_RewritesOptimizer>
+    </modules>
+    <global>
+    	<helpers> <!--HELPER-->
+    		<infobest_rewritesoptimizer>
+    			<class>InfoBest_RewritesOptimizer_Helper</class>
+    		</infobest_rewritesoptimizer>
+    	</helpers>
+        <models> <!--MODELS-AND-MODEL-REWRITES-->
+        	<infobest_rewritesoptimizer>
+                <class>InfoBest_RewritesOptimizer_Model</class>
+            </infobest_rewritesoptimizer>
+        	<catalog>
+        		<rewrite>
+        			<url>InfoBest_RewritesOptimizer_Model_Url</url>
+        		</rewrite>
+        	</catalog>
+        	<catalog>
+        		<rewrite>
+        			<indexer_url>InfoBest_RewritesOptimizer_Model_Indexer_Url</indexer_url>
+        		</rewrite>
+        	</catalog>
+        	<catalog_resource_eav_mysql4>
+        		<rewrite>
+        			<url>InfoBest_RewritesOptimizer_Model_Resource_Eav_Mysql4_Url</url>
+        		</rewrite>
+        	</catalog_resource_eav_mysql4>
+        </models>
+    </global>
+</config>
