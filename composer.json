@@ -9,8 +9,5 @@
             "name": "Eugen Pop",
             "email": "eugen.pop20@gmail.com"
         }
-    ],
-    "require": {
-        "magento-hackathon/magento-composer-installer": "*"
-    }
+    ]
 }
