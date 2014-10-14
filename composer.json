@@ -1,0 +1,16 @@
+{
+    "name": "eugen814/magento-rewritesoptimizer",
+    "license": "MIT",
+    "type": "magento-module",
+    "description": "Magento module for optimizing the way URL rewrites are generated.",
+    "homepage": "https://github.com/eugen814/magento-rewritesoptimizer",
+    "authors": [
+        {
+            "name": "Eugen Pop",
+            "email": "eugen.pop20@gmail.com"
+        }
+    ],
+    "require": {
+        "magento-hackathon/magento-composer-installer": "*"
+    },
+}
