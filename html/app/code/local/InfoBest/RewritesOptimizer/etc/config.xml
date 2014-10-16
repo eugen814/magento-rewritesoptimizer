@@ -26,11 +26,11 @@
         			<indexer_url>InfoBest_RewritesOptimizer_Model_Indexer_Url</indexer_url>
         		</rewrite>
         	</catalog>
-        	<catalog_resource_eav_mysql4>
+        	<catalog_resource>
         		<rewrite>
-        			<url>InfoBest_RewritesOptimizer_Model_Resource_Eav_Mysql4_Url</url>
+        			<url>InfoBest_RewritesOptimizer_Model_Resource_Url</url>
         		</rewrite>
-        	</catalog_resource_eav_mysql4>
+        	</catalog_resource>
         </models>
     </global>
 </config>

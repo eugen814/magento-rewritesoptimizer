@@ -7,7 +7,7 @@
 class InfoBest_RewritesOptimizer_Model_Resource_Category_Collection extends Mage_Catalog_Model_Resource_Category_Collection {
 
     /**
-     * Joins url rewrite rules to collection
+     * Joins url rewrite rules to collection, always uses the default store ID
      * @return Mage_Catalog_Model_Resource_Category_Collection
      */
     public function joinUrlRewrite() {

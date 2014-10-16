@@ -4,8 +4,17 @@
  * @license         http://opensource.org/licenses/MIT - MIT License
  */
 
-class InfoBest_RewritesOptimizer_Model_Resource_Eav_Mysql4_Url extends Mage_Catalog_Model_Resource_Eav_Mysql4_Url {
-  
+class InfoBest_RewritesOptimizer_Model_Resource_Url extends Mage_Catalog_Model_Resource_Url {
+    
+    /**
+    * Retrieve product data objects
+    *
+    * @param int|array $productIds
+    * @param int $storeId
+    * @param int $entityId
+    * @param int $lastEntityId
+    * @return array
+    */
     protected function _getProducts($productIds = null, $storeId, $entityId = 0, &$lastEntityId) {
         $products = array();
         $websiteId = Mage::app()->getStore($storeId)->getWebsiteId();

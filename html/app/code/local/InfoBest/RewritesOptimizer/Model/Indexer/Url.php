@@ -5,12 +5,18 @@
  */
 
 class InfoBest_RewritesOptimizer_Model_Indexer_Url extends Mage_Catalog_Model_Indexer_Url {
-
+    
+    /**
+    * Register event data during product save process
+    * Added additional check for when product changes status or visibility, because depending on value, those products need to be excluded by Indexer
+    *
+    * @param Mage_Index_Model_Event $event
+    */
     protected function _registerProductEvent(Mage_Index_Model_Event $event) {
         $product = $event->getDataObject();
         $dataChange2 = false;
 
-        if (($product->dataHasChangedFor('status') && $product->getData('status')=="1") || ($product->dataHasChangedFor('visibility') && $product->getData('visibility')!="1")) {
+        if (($product->dataHasChangedFor('status') && $product->getData('status') == "1") || ($product->dataHasChangedFor('visibility') && $product->getData('visibility') != "1")) {
         	$dataChange2 = true;
         }
 

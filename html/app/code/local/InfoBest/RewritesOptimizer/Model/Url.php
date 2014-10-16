@@ -6,6 +6,12 @@
  
 class InfoBest_RewritesOptimizer_Model_Url extends Mage_Catalog_Model_Url {
  
+    /**
+    * Refresh all product rewrites in accordance to extension config + ignore store code
+    *
+    * @param int $storeId
+    * @return Mage_Catalog_Model_Url
+    */
     public function refreshProductRewrites($storeId) {
         $this->_categories = array();
         $storeRootCategoryId = $this->getStores($storeId)->getRootCategoryId();
@@ -73,6 +79,14 @@ class InfoBest_RewritesOptimizer_Model_Url extends Mage_Catalog_Model_Url {
     }
 
 
+    /**
+    * Refresh all rewrite URLs
+    * Overrides original by using only the default store code when refreshing URLs
+    * Used to make full reindexing of url rewrites
+    *
+    * @param int $storeId
+    * @return Mage_Catalog_Model_Url
+    */
     public function refreshRewrites($storeId = null) {
         if (is_null($storeId)) {
             foreach (Mage::app()->getWebsites() as $website) {
@@ -84,7 +98,15 @@ class InfoBest_RewritesOptimizer_Model_Url extends Mage_Catalog_Model_Url {
         return parent::refreshRewrites($storeId);
     }
 
-
+    /**
+    * Refresh category rewrite URLs
+    * Overrides original by using only the default store code when refreshing URLs
+    *
+    * @param Varien_Object $category
+    * @param string $parentPath
+    * @param bool $refreshProducts
+    * @return Mage_Catalog_Model_Url
+    */
     public function refreshCategoryRewrite($categoryId, $storeId = null, $refreshProducts = true) {
         if (is_null($storeId)) {
             foreach (Mage::app()->getWebsites() as $website) {
@@ -97,6 +119,14 @@ class InfoBest_RewritesOptimizer_Model_Url extends Mage_Catalog_Model_Url {
     }
 
 
+    /**
+    * Refresh product rewrite URL
+    * Overrides original method by using only the default store code when refreshing URL
+    *
+    * @param Varien_Object $product
+    * @param Varien_Object $category
+    * @return Mage_Catalog_Model_Url
+    */
     public function refreshProductRewrite($productId, $storeId = null) {
         if (is_null($storeId)) {
             foreach (Mage::app()->getWebsites() as $website) {
@@ -109,6 +139,12 @@ class InfoBest_RewritesOptimizer_Model_Url extends Mage_Catalog_Model_Url {
     }
 
 
+    /**
+    * Deletes old rewrites for default store
+    *
+    * @param int $storeId
+    * @return Mage_Catalog_Model_Url
+    */
     public function clearStoreInvalidRewrites($storeId = null) {
         if (is_null($storeId)) {
             foreach (Mage::app()->getWebsites() as $website) {
@@ -121,6 +157,8 @@ class InfoBest_RewritesOptimizer_Model_Url extends Mage_Catalog_Model_Url {
     }
 
 
+    // if used, this would remove category path from product URLs; there's a switch in magento for that; 
+    // but might implement it so that the user has one extension config area that handles all these settings
     // protected function _refreshProductRewrite(Varien_Object $product, Varien_Object $category) {
         // if ($this->getStoreRootCategory($category->getStoreId())->getId() != $category->getId()) {
             // return $this;
