@@ -31,6 +31,11 @@
         			<url>InfoBest_RewritesOptimizer_Model_Resource_Url</url>
         		</rewrite>
         	</catalog_resource>
+        	<core_url>
+        		<rewrite>
+        			<rewrite>InfoBest_RewritesOptimizer_Model_Core_Url_Rewrite</rewrite>
+        		</rewrite>
+        	</core_url>
         </models>
     </global>
 </config>

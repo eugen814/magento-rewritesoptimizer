@@ -5,7 +5,7 @@
  */
 
 class InfoBest_RewritesOptimizer_Model_Core_Url_Rewrite extends Mage_Core_Model_Url_Rewrite {
-    
+
     /**
     * Load rewrite information by id path, feed it the default store ID always
     *
